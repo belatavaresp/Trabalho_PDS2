@@ -8,11 +8,15 @@ Usuario::Usuario(std::string nome, int idade, char genero,
     setAltura(altura);
     setPeso(peso);
     setEmail(email);
+
+    //confere se há um limite setado pelo usuario
+    //se não há, calcula o limite ideal
     if(limite != 0){
         setLimite(limite);
     }else{
         this->limite = calculaLimite();
     }
+
     this->diario = new Diario();
 }
 
@@ -65,11 +69,13 @@ void Usuario::setLimite(int limite){
     this->limite = limite;
 }
 
+Diario* Usuario::getDiario(){
+    return this->diario;
+}
+
+
 int calculaLimite(){
     // implementar calculo
 }
 
-Diario* Usuario::getDiario(){
-    return this->diario;
-}
 

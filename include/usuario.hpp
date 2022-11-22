@@ -4,6 +4,7 @@
 #include <string>
 #include "diario.hpp"
 
+//classe com os dados de um usuario
 class Usuario{
     private:
     std::string nome;
@@ -16,10 +17,14 @@ class Usuario{
     
 
     public:
+    //existe um diario associado a cada usuário
     Diario* diario;
+
+    //construtor/destrutor
     Usuario(std::string,int,char,int,int,std::string,int);
     ~Usuario();
 
+    //metodos get e set
     std::string getNome();
     void setNome(std::string);
 
@@ -40,10 +45,11 @@ class Usuario{
 
     int getLimite();
     void setLimite(int);
-
-    int calculaLimite();
-
+    
     Diario* getDiario();
+
+    //calcula o limite calórico ideal ou inserido
+    int calculaLimite();
 };
 
 #endif
