@@ -13,9 +13,10 @@ class Usuario{
     int peso;
     std::string email;
     int limite;
-    Diario* diario;
+    
 
     public:
+    Diario* diario;
     Usuario(std::string,int,char,int,int,std::string,int);
     ~Usuario();
 
