@@ -28,8 +28,6 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
         return;
     }
 
-    
-
     bool achou = false;
     while(!achou){
         std::cout << "Digite o usuário desejado: ";
