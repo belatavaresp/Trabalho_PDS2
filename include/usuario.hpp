@@ -2,6 +2,7 @@
 #define USUARIO_H
 
 #include <string>
+#include <iostream>
 #include "diario.hpp"
 
 //classe com os dados de um usuario
@@ -19,7 +20,9 @@ class Usuario{
     public:
     //existe um diario associado a cada usuário
     Diario* diario;
-
+    //mostra as entradas do diario do usuario
+    void mostrarEntradas();
+    
     //construtor/destrutor
     Usuario(std::string,int,char,int,int,std::string,int);
     ~Usuario();
@@ -45,7 +48,7 @@ class Usuario{
 
     int getLimite();
     void setLimite(int);
-    
+
     Diario* getDiario();
 
     //calcula o limite calórico ideal ou inserido

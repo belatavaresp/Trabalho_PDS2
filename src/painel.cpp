@@ -44,7 +44,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
         for(auto it = usuarios.begin(); it != usuarios.end(); it++){
             //caso acha o usuario, exibe entradas de seu diario
             if((*it)->getNome() == nomeUsuario){
-                (*it)->getDiario()->mostrarEntradas();
+                (*it)->mostrarEntradas();
                 achou = true;
             }
 

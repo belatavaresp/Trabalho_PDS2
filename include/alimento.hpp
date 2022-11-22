@@ -1,8 +1,11 @@
 #ifndef ALIMENTO_H
 #define ALIMENTO_H
 
+#include <string>
+
 class Alimento{
-    private:
+    public:
+    std::string nome;
     int calorias;
     int porcao;
 

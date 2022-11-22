@@ -73,6 +73,13 @@ Diario* Usuario::getDiario(){
     return this->diario;
 }
 
+void Usuario::mostrarEntradas(){
+    //percorre e exibe o nome calorias e porção
+    for(auto it = this->diario->entradas.begin(); it != this->diario->entradas.end(); it++){
+        std::cout << it->nome << "\t" << it->calorias << " calorias " 
+        << "\t" << it->porcao /*diferenciar gramas e ml*/ << std::endl;
+    }
+}
 
 int calculaLimite(){
     // implementar calculo
