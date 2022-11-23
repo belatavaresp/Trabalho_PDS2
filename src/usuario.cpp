@@ -81,8 +81,7 @@ void Usuario::mostrarEntradas(){
     }
 }
 
-int calculaLimite(){
-    // implementar calculo
-}
+//int calculaLimite(){
+    // implementar calculo}
 
 

@@ -2,7 +2,6 @@
 #define DIARIO_H
 
 #include "alimento.hpp"
-#include "usuario.hpp"
 #include <vector>
 
 //classe que lista os alimentos ingeridos

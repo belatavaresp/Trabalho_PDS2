@@ -24,11 +24,11 @@ int main(){
                 painel.tabelaUniversal();
                 break;
             case 2:
-                std::cout << "Digite seu nome, idade, gênero (m ou f), altura, peso, email e limite de calorias desejado"
+                {std::cout << "Digite seu nome, idade, gênero (m ou f), altura, peso, email e limite de calorias desejado"
                 << std::endl;
                 std::cin >> nome >> idade >> genero >> altura >> peso >> email >> limite;
                 Usuario* usuario = painel.registrarUsuario(nome,idade,genero,altura,peso,email,limite);
-                usuarios.push_back(usuario);
+                usuarios.push_back(usuario);}
                 break;
             case 3:
                 painel.abrirDiario(usuarios);
@@ -36,7 +36,8 @@ int main(){
             case 4:
                 painel.setAtivo(false);
                 break;
-
+            default:
+                break;
         }
     }
 }

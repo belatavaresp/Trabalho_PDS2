@@ -1,4 +1,5 @@
 #include "diario.hpp"
+#include <iostream>
 #include <iterator>
 
 Diario::Diario(){
