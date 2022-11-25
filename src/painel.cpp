@@ -30,7 +30,7 @@ void Painel::tabelaUniversal(){
 }
 
 Usuario* Painel::registrarUsuario(std::string nome, int idade, char genero,
-                          int altura, int peso, std::string email, int limite){
+                          int altura, double peso, std::string email, int limite){
     
     //constroi um objeto usuário
 

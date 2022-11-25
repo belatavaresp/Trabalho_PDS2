@@ -21,7 +21,7 @@ int main(){
     int idade;
     char genero;
     int altura;
-    int peso;
+    double peso;
     std::string email;
     int limite;
     
@@ -29,13 +29,33 @@ int main(){
     while(std::cin>>caso){
         switch(caso){
             case 1:
+                //ta funcionando
                 std::cout << "\n\n\n";
                 painel.tabelaUniversal();
                 break;
             case 2:
-                {std::cout << "Digite seu nome, idade, gênero (m ou f), altura, peso, email e limite de calorias desejado"
-                << std::endl;
-                std::cin >> nome >> idade >> genero >> altura >> peso >> email >> limite;
+                //ta funcionando
+                {std::cout << "Digite seu nome: ";
+                std::cin >> nome;
+                std::cout << "\n";
+                std::cout << "Digite sua idade: ";
+                std::cin >> idade; 
+                std::cout << "\n";
+                std::cout << "Digite seu gênero (f ou m): ";
+                std::cin >> genero;
+                std::cout << "\n";
+                std::cout << "Digite sua altura (cm): ";
+                std::cin >> altura;
+                std::cout << "\n";
+                std::cout << "Digite seu peso (kg): ";
+                std::cin >> peso;
+                std::cout << "\n";
+                std::cout << "Digite seu email: ";
+                std::cin >> email;
+                std::cout << "\n";
+                std::cout << "Digite seu limite calórico: ";
+                std::cin >> limite;
+                std::cout << "\n";
                 Usuario* usuario = painel.registrarUsuario(nome,idade,genero,altura,peso,email,limite);
                 usuarios.push_back(usuario);}
                 break; 
@@ -43,6 +63,7 @@ int main(){
                 painel.abrirDiario(usuarios);
                 break;
             case 4:
+                //ta funcionando
                 painel.setAtivo(false);
                 break;
             default:

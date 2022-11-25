@@ -1,7 +1,7 @@
 #include "usuario.hpp"
 
 Usuario::Usuario(std::string nome, int idade, char genero,
-                int altura, int peso, std::string email, int limite){
+                int altura, double peso, std::string email, int limite){
     setNome(nome);
     setIdade(idade);
     setGenero(genero);
@@ -48,7 +48,7 @@ void Usuario::setAltura(int altura){
     this->altura = altura;
 }
 
-int Usuario::getPeso(){
+double Usuario::getPeso(){
     return this->peso;
 }
 void Usuario::setPeso(int peso){

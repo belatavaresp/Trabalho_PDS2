@@ -22,7 +22,7 @@ class Painel{
 
     //registra um usuario no app
     Usuario* registrarUsuario(std::string nome, int idade, char genero,
-                          int altura, int peso, std::string email, int limite);
+                          int altura, double peso, std::string email, int limite);
 
     //leva ao diário associado ao usuario passado como parâmetro
     void abrirDiario(std::vector<Usuario*> usuarios);

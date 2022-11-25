@@ -12,7 +12,7 @@ class Usuario{
     int idade;
     char genero;
     int altura;
-    int peso;
+    double peso;
     std::string email;
     int limite;
     
@@ -24,7 +24,7 @@ class Usuario{
     void mostrarEntradas();
     
     //construtor/destrutor
-    Usuario(std::string,int,char,int,int,std::string,int);
+    Usuario(std::string,int,char,int,double,std::string,int);
     ~Usuario();
 
     //metodos get e set
@@ -40,7 +40,7 @@ class Usuario{
     int getAltura();
     void setAltura(int);
 
-    int getPeso();
+    double getPeso();
     void setPeso(int);
 
     std::string getEmail();
