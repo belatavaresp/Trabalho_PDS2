@@ -1,11 +1,19 @@
 #include "painel.hpp"
 #include "usuario.hpp"
 
-void mensagemEntrada();
+void mensagemEntrada(){
+    std::cout << "Bem vindo ao seu painel nutricional!" << std::endl
+        << "1 - Mostrar tabela de alimentos" << std::endl 
+        << "2 - Registrar usuario" << std::endl
+        << "3 - Abrir diário" << std::endl
+        << "4 - Fechar aplicativo" << "\n\n";
+}
 
 int main(){
     Painel painel;
     painel.setAtivo(true);
+
+    mensagemEntrada();
 
     std::vector<Usuario*> usuarios;
 
@@ -21,6 +29,7 @@ int main(){
     while(std::cin>>caso){
         switch(caso){
             case 1:
+                std::cout << "\n\n\n";
                 painel.tabelaUniversal();
                 break;
             case 2:
@@ -43,9 +52,4 @@ int main(){
 }
 
 void mensagemEntrada(){
-    std::cout << "Bem vindo ao seu painel nutricional!" << std::endl
-        << "1 - Mostrar tabela de alimentos" << std::endl 
-        << "2 - Registrar usuario" << std::endl
-        << "3 - Abrir diário" << std::endl
-        << "4 - Fechar aplicativo" << std::endl;
-}
+    

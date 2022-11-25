@@ -6,7 +6,6 @@ void Painel::setAtivo(bool ativo){
     //exibe mensagem quando o app é fechado
     if(ativo == false){
         std::cout << "Fechando..." << std::endl;
-        this->~Painel();
     }
     this->ativo = ativo;
 }
@@ -23,6 +22,8 @@ void Painel::tabelaUniversal(){
     //imprime todas as linhas do arquivos
     if (tabela.is_open())
         std::cout << tabela.rdbuf();
+
+    std::cout << "\n\n\n";
 
     //fecha o fluxo do arquivo
     tabela.close();
