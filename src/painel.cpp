@@ -1,5 +1,6 @@
 #include "painel.hpp"
 #include <iterator>
+#include <fstream>
 
 void Painel::setAtivo(bool ativo){
     //exibe mensagem quando o app é fechado
@@ -10,8 +11,21 @@ void Painel::setAtivo(bool ativo){
     this->ativo = ativo;
 }
 
+//função mais comentada, pois não mexemos
+//muito com arquivos, para melhor compreensão
 void Painel::tabelaUniversal(){
-    //implementar leitura do arquivo com as informações
+    //cria um fluxo de arquivo
+    std::fstream tabela;
+
+    //abre o fluxo tabela com os conteudos do .txt
+    tabela.open("lista_alimentos.txt");
+
+    //imprime todas as linhas do arquivos
+    if (tabela.is_open())
+        std::cout << tabela.rdbuf();
+
+    //fecha o fluxo do arquivo
+    tabela.close();
 }
 
 Usuario* Painel::registrarUsuario(std::string nome, int idade, char genero,

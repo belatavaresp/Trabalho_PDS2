@@ -1,0 +1,9 @@
+BEBIDAS (100 ml): 
+1. Energético → 48kcal, 12g carboidrato, 0g gordura, 0g proteína
+2. Refresco → 13.5kcal, 3.4g carboidrato, 0g gordura, 0g proteína
+3. Suco polpa → 40kcal, 8.8g carboidrato, 0g gordura, 0.5g proteína
+4. Refrigerante → 42.5kcal, 10.6g carboidrato, 0g gordura, 0g proteína
+5. Café → 12kcal, 0.6g carboidrato, 1g gordura, 1g proteína
+6. Leite → 40.5kcal, 5g carboidrato, 0.6g gordura, 2.9g proteína
+7. Capuccino → 41kcal, 8.5g carboidrato, 0.7g gordura, 0.35g proteína
+8. Chá mate → 37kcal, 9g carboidrato, 0g gordura, 0g proteína
