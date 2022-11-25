@@ -26,6 +26,7 @@ int main(){
     int limite;
     
     int caso;
+    //fazer um do-while pra mostrar o menu dnv dps da opção
     while(std::cin>>caso){
         switch(caso){
             case 1:
@@ -36,6 +37,7 @@ int main(){
             case 2:
                 //ta funcionando
                 {std::cout << "Digite seu nome: ";
+                //so ta fazendo com o primeiro nome
                 std::cin >> nome;
                 std::cout << "\n";
                 std::cout << "Digite sua idade: ";
@@ -60,11 +62,13 @@ int main(){
                 usuarios.push_back(usuario);}
                 break; 
             case 3:
+                //tem q testar ainda
                 painel.abrirDiario(usuarios);
                 break;
             case 4:
                 //ta funcionando
                 painel.setAtivo(false);
+                return 0;
                 break;
             default:
                 break;
@@ -72,5 +76,4 @@ int main(){
     }
 }
 
-void mensagemEntrada(){
     

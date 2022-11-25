@@ -35,7 +35,7 @@ Usuario* Painel::registrarUsuario(std::string nome, int idade, char genero,
     //constroi um objeto usuário
 
     Usuario* usuario = new Usuario (nome,idade,genero,altura,peso,email,limite);
-    std::cout << "Usuario registrado" << std::endl; 
+    std::cout << "Usuario registrado" << "\n\n"; 
 
     return usuario;
 }

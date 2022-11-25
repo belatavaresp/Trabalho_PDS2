@@ -11,11 +11,11 @@ Usuario::Usuario(std::string nome, int idade, char genero,
 
     //confere se há um limite setado pelo usuario
     //se não há, calcula o limite ideal
-    if(limite != 0){
+    if(limite != 0)
         setLimite(limite);
-    }else{
+    /* }else{
         this->limite = calculaLimite();
-    }
+    } */
 
     this->diario = new Diario();
 }
