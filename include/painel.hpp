@@ -27,8 +27,6 @@ class Painel{
     //leva ao diário associado ao usuario passado como parâmetro
     void abrirDiario(std::vector<Usuario*> usuarios);
 
-    //destrutor
-    ~Painel();
 };
 
 #endif

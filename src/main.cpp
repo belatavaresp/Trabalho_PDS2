@@ -29,7 +29,7 @@ int main(){
                 std::cin >> nome >> idade >> genero >> altura >> peso >> email >> limite;
                 Usuario* usuario = painel.registrarUsuario(nome,idade,genero,altura,peso,email,limite);
                 usuarios.push_back(usuario);}
-                break;
+                break; 
             case 3:
                 painel.abrirDiario(usuarios);
                 break;
