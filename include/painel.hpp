@@ -24,7 +24,7 @@ class Painel{
     Usuario* registrarUsuario(std::string nome, int idade, char genero,
                           int altura, double peso, std::string email, int limite);
 
-    //leva ao diário associado ao usuario passado como parâmetro
+    //leva ao diário associado a um dos usuarios dentro do vetor passado
     void abrirDiario(std::vector<Usuario*> usuarios);
 
 };

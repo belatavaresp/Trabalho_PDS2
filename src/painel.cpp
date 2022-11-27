@@ -45,7 +45,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
     //confere se existe pelo menos um usuário registrado
     if(!usuarios.size()){
         std::cout << "Não existem usuários cadastrados" << std::endl
-        << "Crie um novo usuário para acessar o diário" << std::endl;
+        << "Digite 2 no menu para criar um novo usuário" << std::endl;
         return;
     }
 
@@ -59,6 +59,11 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
         for(auto it = usuarios.begin(); it != usuarios.end(); it++){
             //caso acha o usuario, exibe entradas de seu diario
             if((*it)->getNome() == nomeUsuario){
+                //fazer tipo um menu igual o da main pras coisas do diario
+                std::cout << "Digite o comando desejado:" << std::endl
+                << "I - Insere novo alimento no diário" << std::endl
+                << "M - Mostra os alimentos no diário" << std::endl
+                << "D - Sugere dieta com base no diário" << std::endl;
                 (*it)->mostrarEntradas();
                 achou = true;
             }

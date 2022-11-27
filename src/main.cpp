@@ -2,18 +2,15 @@
 #include "usuario.hpp"
 
 void mensagemEntrada(){
-    std::cout << "Bem vindo ao seu painel nutricional!" << std::endl
-        << "1 - Mostrar tabela de alimentos" << std::endl 
+    std::cout << "\n1 - Mostrar tabela de alimentos" << std::endl 
         << "2 - Registrar usuario" << std::endl
         << "3 - Abrir diário" << std::endl
-        << "4 - Fechar aplicativo" << "\n\n";
+        << "4 - Fechar app" << std::endl;
 }
 
 int main(){
     Painel painel;
     painel.setAtivo(true);
-
-    mensagemEntrada();
 
     std::vector<Usuario*> usuarios;
 
@@ -26,8 +23,17 @@ int main(){
     int limite;
     
     int caso;
-    //fazer um do-while pra mostrar o menu dnv dps da opção
-    while(std::cin>>caso){
+    char escolha = 'N';
+
+    std::cout << "\nBem vindo ao seu painel nutricional!" << std::endl;
+    mensagemEntrada();
+    std::cout << "\nDigite um comando: ";
+    
+
+    do{
+
+        std::cin >> caso;
+
         switch(caso){
             case 1:
                 //ta funcionando
@@ -66,14 +72,20 @@ int main(){
                 painel.abrirDiario(usuarios);
                 break;
             case 4:
-                //ta funcionando
-                painel.setAtivo(false);
-                return 0;
+                std::cout << "Gostaria de fechar o app? S/N " << std::endl;
+                std::cin >> escolha;
                 break;
             default:
+                std::cout << "Opção inválida, digite outra..." << std::endl;
                 break;
         }
-    }
+
+        if(escolha == 'n' || escolha == 'N'){
+            mensagemEntrada();
+            std::cout << "\nDigite um comando: "; }
+
+    }while(escolha == 'n' || escolha == 'N');
+    
 }
 
     
