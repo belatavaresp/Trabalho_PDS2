@@ -1,7 +1,7 @@
 #include "alimento_liquido.hpp"
 
-AlimentoLiquido::AlimentoLiquido(std::string nome,double calorias,int porcao,int copo){
-    setNome(nome);
+AlimentoLiquido::AlimentoLiquido(int codigo,double calorias,int porcao,int copo){
+    setCodigo(codigo);
     setCalorias(calorias);
     setPorcao(porcao);
     setCopo(copo);

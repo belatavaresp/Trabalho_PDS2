@@ -10,7 +10,7 @@ class AlimentoSolido : public Alimento
 
     public:
         //construtor/destrutor
-        AlimentoSolido(std::string,double,int,int);
+        AlimentoSolido(int,double,int,int);
         ~AlimentoSolido();
 
         //metodos get e set

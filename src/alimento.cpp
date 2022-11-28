@@ -2,11 +2,11 @@
 
 Alimento::Alimento(){}
 
-void Alimento::setNome(std::string nome){
-    this->nome = nome;
+void Alimento::setCodigo(int codigo){
+    this->codigo = codigo;
 }
-std::string Alimento::getNome(){
-    return this->nome;
+int Alimento::getCodigo(){
+    return this->codigo;
 }
 
 void Alimento::setCalorias(double calorias){

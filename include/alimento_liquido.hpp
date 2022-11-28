@@ -9,7 +9,7 @@ class AlimentoLiquido : public Alimento
         int copo;
     public:
         //construtor/destrutor
-        AlimentoLiquido(std::string,double,int,int);
+        AlimentoLiquido(int,double,int,int);
         ~AlimentoLiquido();
 
         //metodos get e set

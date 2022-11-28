@@ -1,7 +1,7 @@
 #include "alimento_solido.hpp"
 
-AlimentoSolido::AlimentoSolido(std::string nome,double calorias,int porcao,int unidade){
-    setNome(nome);
+AlimentoSolido::AlimentoSolido(int codigo,double calorias,int porcao,int unidade){
+    setCodigo(codigo);
     setCalorias(calorias);
     setPorcao(porcao);
     setUnidade(unidade);
