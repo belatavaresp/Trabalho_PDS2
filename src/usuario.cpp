@@ -15,7 +15,7 @@ Usuario::Usuario(std::string nome, int idade, char genero,
         setLimite(limite);
     }else{
         this->limite = calculaLimite();
-        std::cout << "Seu limite ideal é " << this->limite << " calorias" << std::endl;
+        std::cout << "Seu limite ideal é " << this->limite << " calorias" << "\n\n";
     }
     this->diario = new Diario();
 }

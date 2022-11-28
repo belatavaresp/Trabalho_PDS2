@@ -1,22 +1,23 @@
 #include "alimento_liquido.hpp"
+#include <iostream>
 
-AlimentoLiquido::AlimentoLiquido(int codigo,double calorias,double carboidratos,double gorduras,double proteinas,int copo){
+using namespace std;
+
+AlimentoLiquido::AlimentoLiquido(int codigo,double calorias,double carboidratos,double gorduras,double proteinas,int quantidade){
     setCodigo(codigo);
     setCalorias(calorias);
     setCarboidratos(carboidratos);
     setGorduras(gorduras);
     setProteinas(proteinas);
-    setCopo(copo);
-}
-
-int AlimentoLiquido::getCopo(){
-    return this->copo;
-}
-
-void AlimentoLiquido::setCopo(int copo){
-    this->copo = copo;
+    setQuantidade(quantidade);
 }
 
 void AlimentoLiquido::descricao(){
-    
+    cout << "Código: " << this->getCodigo() << endl;
+    cout << "Porção ingerida: " << this->getQuantidade() << "ml(s)" << endl;
+
+    cout << "Carboidratos: " << (this->getCarboidratos()/100) * (this->getQuantidade()) << endl;
+    cout << "Gordura: " << (this->getGorduras()/100) * (this->getQuantidade()) << endl;
+    cout << "Proteínas: " << (this->getProteinas()/100) * (this->getQuantidade()) << endl;
+    cout << "Calorias: " << this->totalCalorico() << endl;
 }

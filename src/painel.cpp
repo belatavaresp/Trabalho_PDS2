@@ -53,15 +53,15 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
     bool achou = false;
     while(!achou){
         std::cout << "Digite o usuário desejado: ";
-        std::string nomeUsuario;
-        std::cin >> nomeUsuario;
+        std::string emailUsuario;
+        std::cin >> emailUsuario;
 
         for(auto it = usuarios.begin(); it != usuarios.end(); it++){
             //caso acha o usuario, exibe entradas de seu diario
-            if((*it)->getNome() == nomeUsuario){
+            if((*it)->getEmail() == emailUsuario){
                 //bacana
                 //antes, vamos so arrumar a insereAlimento
-                std::cout << "Digite o comando desejado:" << std::endl
+                std::cout << "\n\nDigite o comando desejado:" << std::endl
                 << "I - Insere novo alimento no diário" << std::endl
                 << "M - Mostra o total nutricional no diário" << std::endl
                 << "D - Sugere dieta com base no diário" << std::endl;

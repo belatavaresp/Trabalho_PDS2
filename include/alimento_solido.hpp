@@ -5,17 +5,9 @@
 
 class AlimentoSolido : public Alimento
 {
-    private:
-        int unidade;
-
     public:
-        //construtor/destrutor
+        //construtor
         AlimentoSolido(int,double,double,double,double,int);
-        ~AlimentoSolido();
-
-        //metodos get e set
-        int getUnidade();
-        void setUnidade(int);
 
         virtual void descricao() override;
 

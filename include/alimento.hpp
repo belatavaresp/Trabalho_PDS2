@@ -3,22 +3,17 @@
 
 class Alimento{
     private:
-
     int codigo;
     //quantidade por 100g/100ml
     double calorias;
     double carboidratos;
     double gorduras;
     double proteinas;
-    //quantos g/ml corresponde uma porcao
-    int porcao;
-
-    
+    int quantidade;
 
     public:
     //construtor/destrutor
     Alimento();
-    ~Alimento();
 
     //metodos get e set
     int getCodigo();
@@ -35,6 +30,9 @@ class Alimento{
 
     double getProteinas();
     void setProteinas(double);
+
+    int getQuantidade();
+    void setQuantidade(int);
 
     //calcula o total de calorias do alimento
     int totalCalorico();

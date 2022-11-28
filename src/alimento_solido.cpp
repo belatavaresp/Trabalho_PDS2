@@ -1,21 +1,24 @@
 #include "alimento_solido.hpp"
+#include <iostream>
 
-AlimentoSolido::AlimentoSolido(int codigo,double calorias,double carboidratos,double gorduras,double proteinas,int unidade){
+using namespace std;
+
+AlimentoSolido::AlimentoSolido(int codigo,double calorias,double carboidratos,double gorduras,double proteinas,int quantidade){
     setCodigo(codigo);
     setCalorias(calorias);
     setCarboidratos(carboidratos);
     setGorduras(gorduras);
     setProteinas(proteinas);
-    setUnidade(unidade);
+    setQuantidade(quantidade);
 }
 
-int AlimentoSolido::getUnidade(){
-    return this->unidade;
-}
-void AlimentoSolido::setUnidade(int unidade){
-    this->unidade = unidade;
-}
 
 void AlimentoSolido::descricao(){
-    
+    cout << "Código: " << this->getCodigo() << endl;
+    cout << "Porção ingerida: " << this->getQuantidade() << "gr(s)" << endl;
+
+    cout << "Carboidratos: " << (this->getCarboidratos()/100) * (this->getQuantidade()) << endl;
+    cout << "Gordura: " << (this->getGorduras()/100) * (this->getQuantidade()) << endl;
+    cout << "Proteínas: " << (this->getProteinas()/100) * (this->getQuantidade()) << endl;
+    cout << "Calorias: " << this->totalCalorico() << endl;
 }
