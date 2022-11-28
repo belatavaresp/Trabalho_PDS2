@@ -17,10 +17,9 @@ class Diario{
     //construtor
     Diario();
 
-    //insere um alimento no diário
-    //void inserirEntrada(Alimento alimento, int quantidade);
-    //otimizar recebimento da entrada
-
+    //insere um alimento apartir de seu codifgo e quantidade ingerida
+    void inserirEntrada(int codigo, int quantidade);
+    
     //calcula o total calórico
     int calcularTotal();
 

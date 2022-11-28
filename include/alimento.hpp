@@ -1,12 +1,10 @@
 #ifndef ALIMENTO_H
 #define ALIMENTO_H
 
-#include <string>
-
 class Alimento{
     private:
 
-    std::string nome;
+    int codigo;
     //quantidade por 100g/100ml
     double calorias;
     double carboidratos;
@@ -23,8 +21,8 @@ class Alimento{
     ~Alimento();
 
     //metodos get e set
-    std::string getNome();
-    void setNome(std::string);
+    int getCodigo();
+    void setCodigo(int);
     
     double getCalorias();
     void setCalorias(double);

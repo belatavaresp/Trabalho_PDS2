@@ -1,20 +1,35 @@
 #include "diario.hpp"
+#include "alimento_liquido.hpp"
+#include "alimento_solido.hpp"
+#include "alimento.hpp"
 #include <iostream>
 #include <iterator>
+#include <fstream>
 
 Diario::Diario(){
     this->total = calcularTotal();
 }
 
-//por que não usar o código do alimento e sim o objeto??
-//não seria melhor diario ser um map de alimentos e quantidades??
-//void Diario::inserirEntrada(Alimento alimento, int quantidade){}
+void Diario::inserirEntrada(int codigo, int quantidade){
+    //pegar o codigo e achar o alimento ne
+    if(codigo > 8)
+        AlimentoSolido* entrada = new AlimentoSolido();
+
+
+    std::fstream dados;
+    dados.open("dados_alimentos.txt");
+
+    if(!dados.is_open())
+        std::cout << "ERRO EM ABRIR ARQUIVO" << std::endl;
+    
+    //ccalma n sei oq fazer
+    while(dados << )
+}
 
 int Diario::calcularTotal(){
     int soma = 0;
     for(auto it = this->entradas.begin(); it != this->entradas.end(); it++){
-        soma += (it->calorias * it->porcao);
-        //diferenciar porçao e quantidade
+        
     }
     return soma;
 }
