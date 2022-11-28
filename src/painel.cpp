@@ -71,7 +71,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                     //<< "D - Sugere dieta com base no diário" << std::endl;
 
                     std::cin >> comando;
-                    std::toupper(comando);
+                    comando = std::toupper(comando);
                     std::cout << comando << std::endl;
 
                     switch(comando){
