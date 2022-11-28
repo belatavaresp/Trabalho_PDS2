@@ -63,7 +63,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                 //antes, vamos so arrumar a insereAlimento
                 std::cout << "Digite o comando desejado:" << std::endl
                 << "I - Insere novo alimento no diário" << std::endl
-                << "M - Mostra os alimentos no diário" << std::endl
+                << "M - Mostra o total nutricional no diário" << std::endl
                 << "D - Sugere dieta com base no diário" << std::endl;
                 (*it)->mostrarEntradas();
                 achou = true;

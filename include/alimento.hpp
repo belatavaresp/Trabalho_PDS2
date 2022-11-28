@@ -37,8 +37,9 @@ class Alimento{
     void setProteinas(double);
 
     //calcula o total de calorias do alimento
-    virtual double totalCalorico() = 0;
-    
+    int totalCalorico();
+
+    virtual void descricao() = 0;
     
 };
 

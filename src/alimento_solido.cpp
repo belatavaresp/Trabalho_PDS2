@@ -16,6 +16,6 @@ void AlimentoSolido::setUnidade(int unidade){
     this->unidade = unidade;
 }
 
-double AlimentoSolido::totalCalorico(){
-    return getCalorias() * getUnidade();
+void AlimentoSolido::descricao(){
+    
 }

@@ -7,12 +7,10 @@
 //classe que lista os alimentos ingeridos
 class Diario{
     public:
-    
-    int total;
+    //entradas e total devem ser publicos para poderem ser acessados pelo usuario
+    std::vector<Alimento*> entradas;
 
-    public:
-    //entradas devem ser publicas para poderem ser acessadas pelo usuario
-    std::vector<Alimento> entradas;
+    int total;
 
     //construtor
     Diario();

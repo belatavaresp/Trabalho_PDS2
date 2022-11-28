@@ -16,8 +16,8 @@ class AlimentoLiquido : public Alimento
         int getCopo();
         void setCopo(int);
 
-        //calcula o total de calorias do alimento
-        double totalCalorico();
+        virtual void descricao() override;
+
 };
 
 #endif

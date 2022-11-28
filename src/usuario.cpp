@@ -11,12 +11,12 @@ Usuario::Usuario(std::string nome, int idade, char genero,
 
     //confere se há um limite setado pelo usuario
     //se não há, calcula o limite ideal
-    if(limite != 0)
+    if(limite != 0){
         setLimite(limite);
-    /* }else{
+    }else{
         this->limite = calculaLimite();
-    } */
-
+        std::cout << "Seu limite ideal é " << this->limite << " calorias" << std::endl;
+    }
     this->diario = new Diario();
 }
 
@@ -74,14 +74,56 @@ Diario* Usuario::getDiario(){
 }
 
 void Usuario::mostrarEntradas(){
-    //percorre e exibe o nome calorias e porção
+    std::cout << "Você possui " << this->diario->entradas.size() << "entradas:" << std::endl;
     for(auto it = this->diario->entradas.begin(); it != this->diario->entradas.end(); it++){
-        std::cout << it->nome << "\t" << it->calorias << " calorias " 
-        << "\t" << it->porcao /*diferenciar gramas e ml*/ << std::endl;
+        int i = 1;
+        std::cout << "Entrada" << i << ":" << std::endl;
+        (*it)->descricao();
+        i++;
     }
+    std::cout << "Total de calorias consumidas: " << this->diario->calcularTotal() << std::endl;
+    if(this->diario->calcularTotal() > this->limite){
+        std::cout << "ATENÇÃO VOCÊ ULTRAPASSOU O SEU LIMITE CALÓRICO!!!" << std::endl;}
 }
 
-//int calculaLimite(){
-    // implementar calculo}
+int Usuario::calculaLimite(){
+    //até dezoito anos de idade
+    if(this->idade <= 18){
+        if(this->genero == 'm' || this->genero == 'M'){
+            //mulheres
+            return (1.55 * ((this->peso * 13.384) + 692.6));
+        }else{
+            //homens
+            return (1.55 * ((this->peso * 17.686) + 658.2));
+        }
+    //até trinta anos de idade
+    }else if(this->idade <= 30){
+        if(this->genero == 'm' || this->genero == 'M'){
+            //mulheres
+            return (1.55 * ((this->peso * 14.818) + 486.6));
+        }else{
+            //homens
+            return (1.55 * ((this->peso * 15.057) + 692.2));
+        }
+    //até 60 anos de idade
+    }else if(this->idade <= 60){
+        if(this->genero == 'm' || this->genero == 'M'){
+            //mulheres
+            return (1.55 * ((this->peso * 8.126) + 845.6));
+        }else{
+            //homens
+            return (1.55 * ((this->peso * 11.472) + 873.1));
+        }
+    //mais de 60 anos de idade
+    }else{
+        if(this->genero == 'm' || this->genero == 'M'){
+            //mulheres
+            return (1.55 * ((this->peso * 9.082) + 658.5));
+        }else{
+            //homens
+            return (1.55 * ((this->peso * 11.711 ) + 587.7));
+        }
+    }
+}
 
 

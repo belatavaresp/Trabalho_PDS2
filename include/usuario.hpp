@@ -20,7 +20,7 @@ class Usuario{
     public:
     //existe um diario associado a cada usuário
     Diario* diario;
-    //mostra as entradas do diario do usuario
+    //mostra o total das entradas no diario do usuario
     void mostrarEntradas();
     
     //construtor/destrutor

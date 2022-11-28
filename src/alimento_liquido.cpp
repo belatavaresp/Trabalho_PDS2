@@ -17,6 +17,6 @@ void AlimentoLiquido::setCopo(int copo){
     this->copo = copo;
 }
 
-double AlimentoLiquido::totalCalorico(){
-    return getCalorias() * getCopo();
+void AlimentoLiquido::descricao(){
+    
 }

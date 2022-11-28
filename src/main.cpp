@@ -24,6 +24,7 @@ int main(){
     
     int caso;
     char escolha = 'N';
+    char escolhaL = 'S';
 
     std::cout << "\nBem vindo ao seu painel nutricional!" << std::endl;
     mensagemEntrada();
@@ -61,8 +62,14 @@ int main(){
                 std::cout << "Digite seu email: ";
                 std::cin >> email;
                 std::cout << "\n";
-                std::cout << "Digite seu limite calórico: ";
-                std::cin >> limite;
+                std::cout << "Gostaria de inserir o limite calórico ideal? S/N" << std::endl;
+                std::cin >> escolhaL;
+                    if(escolhaL == 'S' || escolhaL == 's'){
+                        limite = 0;
+                    }else{
+                        std::cout << "Digite seu limite: ";
+                        std::cin >> limite;
+                    }
                 std::cout << "\n";
                 Usuario* usuario = painel.registrarUsuario(nome,idade,genero,altura,peso,email,limite);
                 usuarios.push_back(usuario);}

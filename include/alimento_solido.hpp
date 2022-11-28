@@ -17,8 +17,8 @@ class AlimentoSolido : public Alimento
         int getUnidade();
         void setUnidade(int);
 
-        //calcula o total de calorias do alimento
-        double totalCalorico();
+        virtual void descricao() override;
+
 };
 
 #endif

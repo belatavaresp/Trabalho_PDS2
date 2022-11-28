@@ -1,4 +1,5 @@
 #include "alimento.hpp"
+#include <fstream>
 
 Alimento::Alimento(){}
 
@@ -37,5 +38,6 @@ double Alimento::getProteinas(){
     return this->proteinas;
 }
 
-
-double totalCalorico(){}
+int Alimento::totalCalorico(){
+    
+}
