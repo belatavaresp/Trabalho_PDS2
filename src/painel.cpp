@@ -1,6 +1,7 @@
 #include "painel.hpp"
 #include <iterator>
 #include <fstream>
+#include <cctype>
 
 void Painel::setAtivo(bool ativo){
     //exibe mensagem quando o app é fechado
@@ -52,20 +53,53 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
     //procura ocorrência do usuario digitado nos registros
     bool achou = false;
     while(!achou){
-        std::cout << "Digite o usuário desejado: ";
+        std::cout << "Digite seu email de usuário: ";
         std::string emailUsuario;
         std::cin >> emailUsuario;
 
         for(auto it = usuarios.begin(); it != usuarios.end(); it++){
             //caso acha o usuario, exibe entradas de seu diario
             if((*it)->getEmail() == emailUsuario){
-                //bacana
-                //antes, vamos so arrumar a insereAlimento
-                std::cout << "\n\nDigite o comando desejado:" << std::endl
-                << "I - Insere novo alimento no diário" << std::endl
-                << "M - Mostra o total nutricional no diário" << std::endl
-                << "D - Sugere dieta com base no diário" << std::endl;
-                (*it)->mostrarEntradas();
+                char comando;
+                char sair = 'N';
+                do{
+                    std::cout << "\n\nDigite o comando desejado:" << std::endl
+                    << "I - Insere novo alimento no diário" << std::endl
+                    << "M - Mostra o total nutricional no diário" << std::endl
+                    << "S - Sair do diário e retornar ao menu" << std::endl;
+                    //ainda n fizemos
+                    //<< "D - Sugere dieta com base no diário" << std::endl;
+
+                    std::cin >> comando;
+                    std::toupper(comando);
+                    std::cout << comando << std::endl;
+
+                    switch(comando){
+                        case 'I':
+                            int codigo;
+                            int ingerido;
+
+                            std::cout << "Código do alimento: ";
+                            std::cin >> codigo;
+                            std::cout << "\nQuantas gramas/ml você comeu? ";
+                            std::cin >> ingerido;
+                            std::cout << std::endl;
+
+                            (*it)->diario->inserirEntrada(codigo,ingerido);
+                            break;
+                        case 'M':
+                            (*it)->mostrarEntradas();
+                            break;
+                        case 'S':
+                            std::cout << "Gostaria de sair do diário? S/N " << std::endl;
+                            std::cin >> sair;
+                            break;
+                        default:
+                            std::cout << "Opção inválida" << std::endl;
+                            break;
+                    }
+
+                }while(sair == 'n' || sair == 'N');
                 achou = true;
             }
 

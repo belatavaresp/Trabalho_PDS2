@@ -15,7 +15,7 @@ AlimentoSolido::AlimentoSolido(int codigo,double calorias,double carboidratos,do
 
 void AlimentoSolido::descricao(){
     cout << "Código: " << this->getCodigo() << endl;
-    cout << "Porção ingerida: " << this->getQuantidade() << "gr(s)" << endl;
+    cout << "Porção ingerida: " << this->getQuantidade() << "gr" << endl;
 
     cout << "Carboidratos: " << (this->getCarboidratos()/100) * (this->getQuantidade()) << endl;
     cout << "Gordura: " << (this->getGorduras()/100) * (this->getQuantidade()) << endl;

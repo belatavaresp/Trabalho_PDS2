@@ -74,11 +74,12 @@ Diario* Usuario::getDiario(){
 }
 
 void Usuario::mostrarEntradas(){
-    std::cout << "Você possui " << this->diario->entradas.size() << "entradas:" << std::endl;
+    std::cout << "Você possui " << this->diario->entradas.size() << " entradas:" << std::endl;
     for(auto it = this->diario->entradas.begin(); it != this->diario->entradas.end(); it++){
         int i = 1;
-        std::cout << "Entrada" << i << ":" << std::endl;
+        std::cout << "Entrada " << i << ":" << std::endl;
         (*it)->descricao();
+        std::cout << std::endl;
         i++;
     }
     std::cout << "Total de calorias consumidas: " << this->diario->calcularTotal() << std::endl;
