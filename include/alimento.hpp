@@ -7,8 +7,12 @@ class Alimento{
     int codigo;
     //calorias por 100g/100ml
     double calorias;
-    //quantos g/ml corresponde uma porcao
-    int porcao;
+    //carboidratos por 100g/100ml
+    double carboidrato;
+    //gorduras por 100g/100ml
+    double gordura;
+    //proteinas por 100g/100ml
+    double proteina;
 
     public:
     //construtor/destrutor
@@ -22,8 +26,14 @@ class Alimento{
     double getCalorias();
     void setCalorias(double);
 
-    int getPorcao();
-    void setPorcao(int);
+    double getCarbs();
+    void setCarbs(double);
+
+    double getCalorias();
+    void setCalorias(double);
+
+    double getCalorias();
+    void setCalorias(double);
 
     //calcula o total de calorias do alimento
     virtual double totalCalorico() = 0;

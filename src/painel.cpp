@@ -59,7 +59,8 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
         for(auto it = usuarios.begin(); it != usuarios.end(); it++){
             //caso acha o usuario, exibe entradas de seu diario
             if((*it)->getNome() == nomeUsuario){
-                //fazer tipo um menu igual o da main pras coisas do diario
+                //bacana
+                //antes, vamos so arrumar a insereAlimento
                 std::cout << "Digite o comando desejado:" << std::endl
                 << "I - Insere novo alimento no diário" << std::endl
                 << "M - Mostra os alimentos no diário" << std::endl

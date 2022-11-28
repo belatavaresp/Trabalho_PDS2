@@ -1,5 +1,8 @@
 #include "alimento_solido.hpp"
 
+//vamos ter q mudar a estrutura dos alimentos
+//pra ter calorias, proteinas, gorduras ...
+
 AlimentoSolido::AlimentoSolido(int codigo,double calorias,int porcao,int unidade){
     setCodigo(codigo);
     setCalorias(calorias);

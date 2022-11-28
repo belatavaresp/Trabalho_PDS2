@@ -16,11 +16,5 @@ double Alimento::getCalorias(){
     return this->calorias;
 }
 
-void Alimento::setPorcao(int porcao){
-    this->porcao = porcao;
-}
-int Alimento::getPorcao(){
-    return this->porcao;
-}
 
 double totalCalorico(){}
