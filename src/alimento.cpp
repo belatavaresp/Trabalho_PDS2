@@ -16,11 +16,26 @@ double Alimento::getCalorias(){
     return this->calorias;
 }
 
-void Alimento::setPorcao(int porcao){
-    this->porcao = porcao;
+void Alimento::setCarboidratos(double carboidratos){
+    this->carboidratos = carboidratos;
 }
-int Alimento::getPorcao(){
-    return this->porcao;
+double Alimento::getCarboidratos(){
+    return this->carboidratos;
 }
+
+void Alimento::setGorduras(double gorduras){
+    this->gorduras = gorduras;
+}
+double Alimento::getGorduras(){
+    return this->gorduras;
+}
+
+void Alimento::setProteinas(double proteinas){
+    this->proteinas = proteinas;
+}
+double Alimento::getProteinas(){
+    return this->proteinas;
+}
+
 
 double totalCalorico(){}

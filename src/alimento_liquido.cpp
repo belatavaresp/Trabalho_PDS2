@@ -1,9 +1,11 @@
 #include "alimento_liquido.hpp"
 
-AlimentoLiquido::AlimentoLiquido(std::string nome,double calorias,int porcao,int copo){
+AlimentoLiquido::AlimentoLiquido(std::string nome,double calorias,double carboidratos,double gorduras,double proteinas,int copo){
     setNome(nome);
     setCalorias(calorias);
-    setPorcao(porcao);
+    setCarboidratos(carboidratos);
+    setGorduras(gorduras);
+    setProteinas(proteinas);
     setCopo(copo);
 }
 
@@ -16,5 +18,5 @@ void AlimentoLiquido::setCopo(int copo){
 }
 
 double AlimentoLiquido::totalCalorico(){
-    return (getPorcao() * getCalorias() / 100 ) * getCopo();
+    return getCalorias() * getCopo();
 }

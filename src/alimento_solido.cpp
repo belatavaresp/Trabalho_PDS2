@@ -1,9 +1,11 @@
 #include "alimento_solido.hpp"
 
-AlimentoSolido::AlimentoSolido(std::string nome,double calorias,int porcao,int unidade){
+AlimentoSolido::AlimentoSolido(std::string nome,double calorias,double carboidratos,double gorduras,double proteinas,int unidade){
     setNome(nome);
     setCalorias(calorias);
-    setPorcao(porcao);
+    setCarboidratos(carboidratos);
+    setGorduras(gorduras);
+    setProteinas(proteinas);
     setUnidade(unidade);
 }
 
@@ -15,5 +17,5 @@ void AlimentoSolido::setUnidade(int unidade){
 }
 
 double AlimentoSolido::totalCalorico(){
-    return (getPorcao() * getCalorias() / 100 )* getUnidade();
+    return getCalorias() * getUnidade();
 }
