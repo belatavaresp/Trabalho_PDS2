@@ -45,6 +45,7 @@ double Alimento::getQuantidade(){
     return this->quantidade;
 }
 
- double Alimento::totalCalorico(){
+double Alimento::totalCalorico(){
+    //calorias estão por 100g, por isso são divididas por 100
     return ((this->calorias / 100) * this->quantidade);
  }

@@ -40,6 +40,7 @@ class Alimento{
     //calcula o total de calorias do alimento
     double totalCalorico();
 
+    //metodo que vai sofrer polimorfismo
     virtual void descricao() = 0;
     
 };

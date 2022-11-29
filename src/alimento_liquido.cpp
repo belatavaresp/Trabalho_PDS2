@@ -14,6 +14,7 @@ AlimentoLiquido::AlimentoLiquido(int codigo,double calorias,double carboidratos,
 
 void AlimentoLiquido::descricao(){
     cout << "Código: " << this->getCodigo() << endl;
+    //polimorfismo na unidade de porção
     cout << "Porção ingerida: " << this->getQuantidade() << "ml" << endl;
 
     cout << "Carboidratos: " << (this->getCarboidratos()/100) * (this->getQuantidade()) << endl;

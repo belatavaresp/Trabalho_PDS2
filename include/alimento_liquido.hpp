@@ -9,8 +9,8 @@ class AlimentoLiquido : public Alimento
         //construtor
         AlimentoLiquido(int,double,double,double,double,double);
 
+        //polimorfismo
         virtual void descricao() override;
-
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "painel.hpp"
 #include "usuario.hpp"
 
+//mensagem do menu inicial
 void mensagemEntrada(){
     std::cout << "\n1 - Mostrar tabela de alimentos" << std::endl 
         << "2 - Registrar usuario" << std::endl
@@ -10,10 +11,13 @@ void mensagemEntrada(){
 
 int main(){
     Painel painel;
+    //liga o app
     painel.setAtivo(true);
 
+    //usuarios do app inicializados
     std::vector<Usuario*> usuarios;
 
+    //dados de um usuario a serem recolhidos
     std::string nome;
     int idade;
     char genero;
@@ -22,8 +26,14 @@ int main(){
     std::string email;
     int limite;
     
+    //escolha do menu
     int caso;
+
+    //decide se o app permanece aberto ou fecha
     char escolha = 'N';
+
+    //descide se o limite sera inserido pelo usuário
+    //ou será calculado pelo próprio app
     char escolhaL = 'S';
 
     std::cout << "\nBem vindo ao seu painel nutricional!" << std::endl;
@@ -37,14 +47,13 @@ int main(){
 
         switch(caso){
             case 1:
-                //ta funcionando
+                //imprime os alimentos da tabela
                 std::cout << "\n\n\n";
                 painel.tabelaUniversal();
                 break;
             case 2:
-                {//ta funcionando
-                std::cout << "Digite seu nome: ";
-                //so ta fazendo com o primeiro nome
+                //coleta os dados e cria novo usuário
+                {std::cout << "Digite seu primeiro nome: ";
                 std::cin >> nome;
                 std::cout << "\n";
                 std::cout << "Digite sua idade: ";
@@ -71,18 +80,25 @@ int main(){
                         std::cin >> limite;
                     }
                 std::cout << "\n";
+
                 Usuario* usuario = painel.registrarUsuario(nome,idade,genero,altura,peso,email,limite);
+
+                //insere usuário novo no conjunto de usuários existente
                 usuarios.push_back(usuario);}
                 break;
             case 3:
-                //tem q testar ainda
+                //abre o menu de funções do diário
                 painel.abrirDiario(usuarios);
                 break;
             case 4:
+                //fecha o app
                 std::cout << "Gostaria de fechar o app? S/N " << std::endl;
                 std::cin >> escolha;
+                if(escolha == 's' || escolha == 'S')
+                    painel.setAtivo(false);
                 break;
             default:
+                //identifica casos inválidos de entrada
                 std::cout << "Opção inválida, digite outra..." << std::endl;
                 break;
         }
