@@ -51,10 +51,6 @@ int Diario::calcularTotal(){
     return soma;
 }
 
-int Diario::getTotal(){
-    return this->total;
-}
-
 void Diario::exibirTotal(){
     std::cout << this->calcularTotal() << std::endl;
 }

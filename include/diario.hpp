@@ -9,7 +9,6 @@ class Diario{
     public:
     //entradas e total devem ser publicos para poderem ser acessados pelo usuario
     std::vector<Alimento*> entradas;
-
     int total;
 
     //construtor
@@ -20,9 +19,6 @@ class Diario{
     
     //calcula o total calórico
     int calcularTotal();
-
-    //retorna o total calórico atual
-    int getTotal();
 
     //exibe o total e alerta quando o limite é ultrapassado
     void exibirTotal();

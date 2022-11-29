@@ -82,7 +82,8 @@ void Usuario::mostrarEntradas(){
         std::cout << std::endl;
         i++;
     }
-    std::cout << "Total de calorias consumidas: " << this->diario->calcularTotal() << std::endl;
+    std::cout << "Total de calorias consumidas: ";
+    this->diario->exibirTotal();
     if(this->diario->calcularTotal() > this->limite){
         std::cout << "ATENÇÃO VOCÊ ULTRAPASSOU O SEU LIMITE CALÓRICO!!!" << std::endl;}
 }

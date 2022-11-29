@@ -4,11 +4,14 @@
 class Alimento{
     private:
     int codigo;
-    //quantidade por 100g/100ml
+
+    //nutrientes por 100g/100ml
     double calorias;
     double carboidratos;
     double gorduras;
     double proteinas;
+
+    //quantidade ingerida
     int quantidade;
 
     public:
