@@ -73,7 +73,7 @@ int main(){
                 std::cout << "\n";
                 Usuario* usuario = painel.registrarUsuario(nome,idade,genero,altura,peso,email,limite);
                 usuarios.push_back(usuario);}
-                break; 
+                break;
             case 3:
                 //tem q testar ainda
                 painel.abrirDiario(usuarios);

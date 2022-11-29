@@ -42,7 +42,7 @@ Usuario* Painel::registrarUsuario(std::string nome, int idade, char genero,
 }
 
 void Painel::abrirDiario(std::vector<Usuario*> usuarios){
-    
+
     //confere se existe pelo menos um usuário registrado
     if(!usuarios.size()){
         std::cout << "Não existem usuários cadastrados" << std::endl
@@ -80,7 +80,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
 
                             std::cout << "Código do alimento: ";
                             std::cin >> codigo;
-                            std::cout << "\nQuantas gramas/ml você comeu? ";
+                            std::cout << "\nQuantas gramas/ml você ingeriu? ";
                             std::cin >> ingerido;
                             std::cout << std::endl;
 
@@ -100,22 +100,25 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
 
                 }while(sair == 'n' || sair == 'N');
                 achou = true;
+                
             }
-
-            //caso não acha pergunta se quer procurar outro usuario
-            if(!achou){
-                std::cout << "Usuario nao encontrado" << std::endl;
-                std::cout << "Digitar novo usuario? S/N" << std::endl;
-                char caso;
-                std::cin >> caso;
-                caso = std::toupper(caso);
-                if(caso == 'N'){
-                    std::cout << "Voltando para o painel inicial..." << std::endl;
-                    return ;
-                }
-            break;
+            if(achou)
+                break;
+            
+        } 
+        //caso não acha pergunta se quer procurar outro usuario
+        if(!achou){
+            std::cout << "Usuario nao encontrado" << std::endl;
+            std::cout << "Digitar novo usuario? S/N" << std::endl;
+            char caso;
+            std::cin >> caso;
+            caso = std::toupper(caso);
+            if(caso == 'N'){
+                std::cout << "Voltando para o painel inicial..." << std::endl;
+                return ;
             }
-        }  
+            
+        } 
     }
     return;    
 }
