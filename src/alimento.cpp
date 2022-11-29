@@ -38,13 +38,13 @@ double Alimento::getProteinas(){
     return this->proteinas;
 }
 
-void Alimento::setQuantidade(int quantidade){
+void Alimento::setQuantidade(double quantidade){
     this->quantidade = quantidade;
 }
-int Alimento::getQuantidade(){
+double Alimento::getQuantidade(){
     return this->quantidade;
 }
 
- int Alimento::totalCalorico(){
+ double Alimento::totalCalorico(){
     return ((this->calorias / 100) * this->quantidade);
  }

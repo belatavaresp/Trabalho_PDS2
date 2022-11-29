@@ -72,12 +72,11 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
 
                     std::cin >> comando;
                     comando = std::toupper(comando);
-                    std::cout << comando << std::endl;
 
                     switch(comando){
                         case 'I':
                             int codigo;
-                            int ingerido;
+                            double ingerido;
 
                             std::cout << "Código do alimento: ";
                             std::cin >> codigo;
@@ -112,8 +111,9 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                 caso = std::toupper(caso);
                 if(caso == 'N'){
                     std::cout << "Voltando para o painel inicial..." << std::endl;
-                    return;
+                    return ;
                 }
+            break;
             }
         }  
     }

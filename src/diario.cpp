@@ -10,7 +10,7 @@ Diario::Diario(){
     this->total = calcularTotal();
 }
 
-void Diario::inserirEntrada(int codigo, int quantidade){
+void Diario::inserirEntrada(int codigo, double quantidade){
     //cria um fluxo de dados para as informações dos alimentos
     std::fstream dados;
     dados.open("dados_alimentos.txt");
@@ -20,7 +20,7 @@ void Diario::inserirEntrada(int codigo, int quantidade){
     
     //dados a serem extraidos do txt
     int id;
-    int calorias;
+    double calorias;
     double carboidrato;
     double gordura;
     double proteina;
@@ -31,11 +31,11 @@ void Diario::inserirEntrada(int codigo, int quantidade){
             if(codigo > 8){
                 Alimento* entradaS = new AlimentoSolido(codigo,calorias,carboidrato,gordura,proteina,quantidade);
                 entradas.push_back(entradaS);
-                std::cout << "Alimento inserido com sucesso" << std::endl;
+                std::cout << "Alimento sólido inserido com sucesso" << std::endl;
             }else{
                 Alimento* entradaL = new AlimentoLiquido(codigo,calorias,carboidrato,gordura,proteina,quantidade);
                 entradas.push_back(entradaL);
-                std::cout << "Alimento inserido com sucesso" << std::endl;
+                std::cout << "Alimento líquido inserido com sucesso" << std::endl;
             }
             return;
         }

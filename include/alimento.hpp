@@ -12,7 +12,7 @@ class Alimento{
     double proteinas;
 
     //quantidade ingerida
-    int quantidade;
+    double quantidade;
 
     public:
     //construtor/destrutor
@@ -34,11 +34,11 @@ class Alimento{
     double getProteinas();
     void setProteinas(double);
 
-    int getQuantidade();
-    void setQuantidade(int);
+    double getQuantidade();
+    void setQuantidade(double);
 
     //calcula o total de calorias do alimento
-    int totalCalorico();
+    double totalCalorico();
 
     virtual void descricao() = 0;
     

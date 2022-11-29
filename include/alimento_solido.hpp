@@ -7,7 +7,7 @@ class AlimentoSolido : public Alimento
 {
     public:
         //construtor
-        AlimentoSolido(int,double,double,double,double,int);
+        AlimentoSolido(int,double,double,double,double,double);
 
         virtual void descricao() override;
 

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-AlimentoSolido::AlimentoSolido(int codigo,double calorias,double carboidratos,double gorduras,double proteinas,int quantidade){
+AlimentoSolido::AlimentoSolido(int codigo,double calorias,double carboidratos,double gorduras,double proteinas,double quantidade){
     setCodigo(codigo);
     setCalorias(calorias);
     setCarboidratos(carboidratos);

@@ -42,8 +42,8 @@ int main(){
                 painel.tabelaUniversal();
                 break;
             case 2:
-                //ta funcionando
-                {std::cout << "Digite seu nome: ";
+                {//ta funcionando
+                std::cout << "Digite seu nome: ";
                 //so ta fazendo com o primeiro nome
                 std::cin >> nome;
                 std::cout << "\n";

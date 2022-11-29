@@ -7,7 +7,7 @@ class AlimentoLiquido : public Alimento
 {
     public:
         //construtor
-        AlimentoLiquido(int,double,double,double,double,int);
+        AlimentoLiquido(int,double,double,double,double,double);
 
         virtual void descricao() override;
 

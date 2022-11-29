@@ -15,7 +15,7 @@ class Diario{
     Diario();
 
     //insere um alimento apartir de seu codifgo e quantidade ingerida
-    void inserirEntrada(int codigo, int quantidade);
+    void inserirEntrada(int codigo, double quantidade);
     
     //calcula o total calórico
     int calcularTotal();
