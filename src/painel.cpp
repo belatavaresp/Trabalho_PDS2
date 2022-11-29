@@ -109,6 +109,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                 std::cout << "Digitar novo usuario? S/N" << std::endl;
                 char caso;
                 std::cin >> caso;
+                caso = std::toupper(caso);
                 if(caso == 'N'){
                     std::cout << "Voltando para o painel inicial..." << std::endl;
                     return;
