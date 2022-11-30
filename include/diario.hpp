@@ -11,7 +11,7 @@ class Diario{
     std::vector<Alimento*> entradas;
     int total;
 
-    //construtor
+    //construtor 
     Diario();
 
     //insere um alimento apartir de seu codifgo e quantidade ingerida

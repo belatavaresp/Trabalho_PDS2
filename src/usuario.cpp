@@ -75,13 +75,16 @@ Diario* Usuario::getDiario(){
 
 void Usuario::mostrarEntradas(){
     std::cout << "Você possui " << this->diario->entradas.size() << " entradas:" << std::endl;
+    int i = 1;
+    //acessa a descrição das entradas
     for(auto it = this->diario->entradas.begin(); it != this->diario->entradas.end(); it++){
-        int i = 1;
         std::cout << "Entrada " << i << ":" << std::endl;
         (*it)->descricao();
         std::cout << std::endl;
         i++;
     }
+    //confere o total e compara com limite calórico
+    //envia o alerta caso tenha ultrapassado
     std::cout << "Total de calorias consumidas: ";
     this->diario->exibirTotal();
     if(this->diario->calcularTotal() > this->limite){

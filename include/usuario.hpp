@@ -16,10 +16,10 @@ class Usuario{
     std::string email;
     int limite;
     
-
     public:
     //existe um diario associado a cada usuário
     Diario* diario;
+
     //mostra o total das entradas no diario do usuario
     void mostrarEntradas();
     
@@ -51,7 +51,7 @@ class Usuario{
 
     Diario* getDiario();
 
-    //calcula o limite calórico ideal ou inserido
+    //calcula o limite calórico ideal
     int calculaLimite();
 };
 

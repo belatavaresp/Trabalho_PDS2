@@ -34,7 +34,6 @@ Usuario* Painel::registrarUsuario(std::string nome, int idade, char genero,
                           int altura, double peso, std::string email, int limite){
     
     //constroi um objeto usuário
-
     Usuario* usuario = new Usuario (nome,idade,genero,altura,peso,email,limite);
     std::cout << "Usuario registrado" << "\n\n"; 
 
@@ -42,7 +41,7 @@ Usuario* Painel::registrarUsuario(std::string nome, int idade, char genero,
 }
 
 void Painel::abrirDiario(std::vector<Usuario*> usuarios){
-    
+
     //confere se existe pelo menos um usuário registrado
     if(!usuarios.size()){
         std::cout << "Não existem usuários cadastrados" << std::endl
@@ -60,9 +59,12 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
         for(auto it = usuarios.begin(); it != usuarios.end(); it++){
             //caso acha o usuario, exibe entradas de seu diario
             if((*it)->getEmail() == emailUsuario){
+                //escolha do menu do diário
                 char comando;
+                //mantem o diário aberto ou fechado
                 char sair = 'N';
                 do{
+                    //abre menu do diário
                     std::cout << "\n\nDigite o comando desejado:" << std::endl
                     << "I - Insere novo alimento no diário" << std::endl
                     << "M - Mostra o total nutricional no diário" << std::endl
@@ -71,16 +73,18 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                     //<< "D - Sugere dieta com base no diário" << std::endl;
 
                     std::cin >> comando;
+                    //padroniza a entrada como uppercase
                     comando = std::toupper(comando);
 
                     switch(comando){
                         case 'I':
+                            //atributos da nova entrada
                             int codigo;
                             double ingerido;
 
                             std::cout << "Código do alimento: ";
                             std::cin >> codigo;
-                            std::cout << "\nQuantas gramas/ml você comeu? ";
+                            std::cout << "\nQuantas gramas/ml você ingeriu? ";
                             std::cin >> ingerido;
                             std::cout << std::endl;
 
@@ -100,6 +104,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
 
                 }while(sair == 'n' || sair == 'N');
                 achou = true;
+                
             }
 
             //caso não acha pergunta se quer procurar outro usuario
@@ -115,7 +120,8 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                 }
             break;
             }
-        }  
+            
+        } 
     }
     return;    
 }

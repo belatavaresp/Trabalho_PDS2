@@ -9,8 +9,8 @@ class AlimentoSolido : public Alimento
         //construtor
         AlimentoSolido(int,double,double,double,double,double);
 
+        //poliformismo
         virtual void descricao() override;
-
 };
 
 #endif

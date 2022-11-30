@@ -9,7 +9,7 @@
 //classe inicial, painel de entrada do app
 class Painel{
     private:
-    //variável para ligar e desligar o app
+    //variável para ligar e desligar o app 
     bool ativo = false;
 
     public:

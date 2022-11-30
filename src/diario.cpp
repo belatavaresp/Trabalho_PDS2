@@ -45,6 +45,7 @@ void Diario::inserirEntrada(int codigo, double quantidade){
 
 int Diario::calcularTotal(){
     int soma = 0;
+    //percorre todos os alimentos, somando as calorias de cada um
     for(auto it = this->entradas.begin(); it != this->entradas.end(); it++){
         soma += (*it)->totalCalorico();
     }
