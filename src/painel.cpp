@@ -87,10 +87,20 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
 
                             std::cout << "Código do alimento: ";
                             std::cin >> codigo;
+                            //valida o codigo
+                            try{
+                                if(codigo < 1 || codigo >= 26)
+                                throw codigo;
+                            }catch(int e4){
+                            do{
+                                std::cout << "Entrada Inválida, digite novamente: ";
+                                std::cin >> codigo;
+                            }while(codigo < 1 || codigo >= 26);
+                }
                             std::cout << "\nQuantas gramas/ml você ingeriu? ";
                             std::cin >> ingerido;
                             std::cout << std::endl;
-
+                            
                             (*it)->diario->inserirEntrada(codigo,ingerido);
                             break;
                         case 'M':

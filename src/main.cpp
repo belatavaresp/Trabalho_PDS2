@@ -1,15 +1,6 @@
 #include "painel.hpp"
 #include "usuario.hpp"
 
-class ExcessaoEntradaInvalida : public std::exception{
-    public:
-    char* what(){
-        return "Entrada Inválida, digite novamente: ";
-    private:
-    char dado;
-    }
-};
-
 //mensagem do menu inicial
 void mensagemEntrada(){
     std::cout << "\n1 - Mostrar tabela de alimentos" << std::endl 
@@ -66,26 +57,57 @@ int main(){
                 std::cin >> nome;
                 std::cout << "\n";
                 std::cout << "Digite sua idade: ";
-                std::cin >> idade; 
+                std::cin >> idade;
+                //valida a idade
+                try{
+                    if(idade <= 0 || idade >= 120)
+                        throw idade;
+                }catch(int e1){
+                    do{
+                        std::cout << "Entrada Inválida, digite novamente: ";
+                        std::cin >> idade;
+                    }while(idade <= 0 || idade >= 120);
+                }
                 std::cout << "\n";
-                std::cout << "Digite seu gênero (f ou m): ";
+                std::cout << "Digite seu sexo biológico (f ou m): ";
                 std::cin >> genero;
+                //valida o genero
                 try{
                 genero = std::tolower(genero);
-                if(genero != 'f' || genero != 'm')
-                    throw ExcessaoEntradaInvalida(genero);
-                }catch(ExcessaoEntradaInvalida& e){
+                if(genero != 'f' && genero != 'm')
+                    throw genero;
+                }catch(char e2){
                     do{
-                        std::cout << e.what();
+                        std::cout << "Entrada Inválida, digite novamente: ";
                         std::cin >> genero;
-                    }while(genero != 'f' || genero != 'm');
+                    }while(genero != 'f' && genero != 'm');
                 }
                 std::cout << "\n";
                 std::cout << "Digite sua altura (cm): ";
                 std::cin >> altura;
+                //valida altura
+                try{
+                    if(altura <= 90 || altura >= 240)
+                        throw altura;
+                }catch(int e3){
+                    do{
+                        std::cout << "Entrada Inválida, digite novamente: ";
+                        std::cin >> altura;
+                    }while(altura <= 90 || altura >= 240);
+                }
                 std::cout << "\n";
                 std::cout << "Digite seu peso (kg): ";
                 std::cin >> peso;
+                //valida o peso
+                try{
+                    if(peso < 20 || peso >= 270)
+                        throw peso;
+                }catch(double e3){
+                    do{
+                        std::cout << "Entrada Inválida, digite novamente: ";
+                        std::cin >> peso;
+                    }while(peso <= 20 || peso >= 270);
+                }
                 std::cout << "\n";
                 std::cout << "Digite seu email: ";
                 std::cin >> email;
