@@ -1,6 +1,15 @@
 #include "painel.hpp"
 #include "usuario.hpp"
 
+class ExcessaoEntradaInvalida : public std::exception{
+    public:
+    char* what(){
+        return "Entrada Inválida, digite novamente: ";
+    private:
+    char dado;
+    }
+};
+
 //mensagem do menu inicial
 void mensagemEntrada(){
     std::cout << "\n1 - Mostrar tabela de alimentos" << std::endl 
@@ -61,6 +70,16 @@ int main(){
                 std::cout << "\n";
                 std::cout << "Digite seu gênero (f ou m): ";
                 std::cin >> genero;
+                try{
+                genero = std::tolower(genero);
+                if(genero != 'f' || genero != 'm')
+                    throw ExcessaoEntradaInvalida(genero);
+                }catch(ExcessaoEntradaInvalida& e){
+                    do{
+                        std::cout << e.what();
+                        std::cin >> genero;
+                    }while(genero != 'f' || genero != 'm');
+                }
                 std::cout << "\n";
                 std::cout << "Digite sua altura (cm): ";
                 std::cin >> altura;

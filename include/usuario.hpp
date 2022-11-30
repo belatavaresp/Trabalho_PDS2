@@ -5,6 +5,11 @@
 #include <iostream>
 #include "diario.hpp"
 
+class ExcessaoEntradaInvalida : public std::exception{
+    public:
+    char* what();
+};
+
 //classe com os dados de um usuario
 class Usuario{
     private:

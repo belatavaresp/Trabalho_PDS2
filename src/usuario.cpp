@@ -38,6 +38,7 @@ char Usuario::getGenero(){
     return this->genero;
 }
 void Usuario::setGenero(char genero){
+    genero = std::tolower(genero);
     this->genero = genero;
 }
 
