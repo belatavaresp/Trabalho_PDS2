@@ -111,7 +111,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                 caso = std::toupper(caso);
                 if(caso == 'N'){
                     std::cout << "Voltando para o painel inicial..." << std::endl;
-                    return ;
+                    return;
                 }
             break;
             }
