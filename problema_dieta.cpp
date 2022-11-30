@@ -311,7 +311,7 @@ int main()
              };
 
 
-        std::vector <std::vector<float>> matriz(linhasA, std::vector<float>(colunasA, 0));
+        std::vector < std::vector<float> > matriz(linhasA, std::vector<float>(colunasA, 0));
         std::vector<float> b(linhasA,0);
         std::vector<float> c(colunasA,0);
 

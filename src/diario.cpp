@@ -13,7 +13,7 @@ Diario::Diario(){
 void Diario::inserirEntrada(int codigo, double quantidade){
     //cria um fluxo de dados para as informações dos alimentos
     std::fstream dados;
-    dados.open("dados_alimentos.txt");
+    dados.open("./dados_alimentos.txt");
 
     if(!dados.is_open())
         std::cout << "ERRO EM ABRIR ARQUIVO" << std::endl;

@@ -18,7 +18,10 @@ void Painel::tabelaUniversal(){
     std::fstream tabela;
 
     //abre o fluxo tabela com os conteudos do .txt
-    tabela.open("lista_alimentos.txt");
+    tabela.open("./lista_alimentos.txt");
+
+    if(!tabela.is_open())
+        std::cout << "ERRO EM ABRIR ARQUIVO" << std::endl;
 
     //imprime todas as linhas do arquivos
     if (tabela.is_open())
