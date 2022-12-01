@@ -86,7 +86,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
 
                     float a[5][2] = {{280,35},{358,48},{208,9},  // Inicializa a matriz A
                                     {382,24},{254,37}};  
-                    float B[] = {limite,250};  // Inicializa o vetor B
+                    float B[] = {static_cast<float>(limite),250};  // Inicializa o vetor B
 
                     float C[] = {-3,-3,-3,-3,-4}; // Inicializa o vetor C
                                 
@@ -155,22 +155,20 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                 }while(sair == 'n' || sair == 'N');
                 achou = true;
                 
+            }            
+        }
+        //caso não acha pergunta se quer procurar outro usuario
+        if(!achou){
+            std::cout << "Usuario nao encontrado" << std::endl;
+            std::cout << "Digitar novo usuario? S/N" << std::endl;
+            char caso;
+            std::cin >> caso;
+            caso = std::toupper(caso);
+            if(caso == 'N'){
+                std::cout << "Voltando para o painel inicial..." << std::endl;
+                return;
             }
-
-            //caso não acha pergunta se quer procurar outro usuario
-            if(!achou){
-                std::cout << "Usuario nao encontrado" << std::endl;
-                std::cout << "Digitar novo usuario? S/N" << std::endl;
-                char caso;
-                std::cin >> caso;
-                caso = std::toupper(caso);
-                if(caso == 'N'){
-                    std::cout << "Voltando para o painel inicial..." << std::endl;
-                    return;
-                }
             break;
-            }
-            
         } 
     }
     return;    
