@@ -109,7 +109,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
                         c[i] = C[i];
                     }
 
-                    Simplex simplex(matriz,b,c);
+                    Simplex simplex(matriz,b,c);//
 
                     switch(comando){
                         case 'I':
