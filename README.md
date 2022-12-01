@@ -25,6 +25,10 @@ Após baixar o .zip, no terminal do VS Code
 Caso você digite 'make' no terminal e haja um erro de compilação de objetos inválidos:
     - abra a pasta 'obj' do projeto e delete todos os arquivos .o nela
     - tente compilar novamente
+    
+#### Executar diretamente pelo arquivo run.exe
+
+Caso você deseje executar o aplicativo localmente pelo run.exe, lembre-se de acessá-lo pelo terminal, e seguindo todo o path até encontrá-lo na pasta local onde o projeto foi baixado
 
 
 
