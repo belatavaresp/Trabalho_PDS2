@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include "problema_dieta.hpp"
+#include "diario.hpp"
+
 
 /*
     Basicamente, a ideia desse algoritmo é transformar o problema de otimização em um sistema linear.
@@ -22,33 +25,15 @@
 
 // Algoritmo simplex é um algoritmo de otimização linear que maximiza ou minimiza
 // o valor de uma função objetivo com restrições para as variáveis dessa função
-
-class Simplex{
-
-    private:
-        int linhas, colunas;
-        
-        // Armazena os valores dos coeficientes das variáveis das restrições
-        std::vector <std::vector<float> > A;
-        // Armazena o valor das restrições
-        std::vector<float> B;
-        // Armazena os valores dos coeficientes da função objetivo
-        std::vector<float> C;
-
-        // Define se a função é ilimitada ou não
-        bool ilimitada;
-
-    public:
         // Construtor
-        Simplex(std::vector <std::vector<float> > matrix,std::vector<float> b ,std::vector<float> c){
+        Simplex::Simplex(std::vector <std::vector<float>> matrix,std::vector<float> b ,std::vector<float> c){
+            custoMin = 0;
             ilimitada = false;
             linhas = matrix.size();
             colunas = matrix[0].size();
-            A.resize( linhas , std::vector<float>( colunas , 0 ) );
+            A.resize( linhas , std::vector<float>( colunas , 0 ));
             B.resize(b.size());
             C.resize(c.size());
-
-
 
             // Copia os valores de matrix para A
             for(int i= 0;i<linhas;i++){             
@@ -71,7 +56,7 @@ class Simplex{
         }
         
         // Algoritmo Simplex
-        bool calculoAlgoritmoSimplex(){
+        bool Simplex::calculoAlgoritmoSimplex(){
             
             // Verifica se a tabela já está otimizada, se estiver não tem necessidade de calcular
             if(verificaOtimizacao() == true){
@@ -98,7 +83,7 @@ class Simplex{
         
         // Verifica se a tabela está otimizada
         // Se a função objetivo tiver mais coeficientes negativos que positivos, então não está otimizada
-        bool verificaOtimizacao(){
+        bool Simplex::verificaOtimizacao(){
              
             bool otimizada = false;
             int contValoresPositivos = 0;
@@ -118,7 +103,7 @@ class Simplex{
         }
         
         // Escalona a matriz
-        void escalonamento(int linhaPivo, int colunaPivo){
+        void Simplex::escalonamento(int linhaPivo, int colunaPivo){
 
             float valorPivo = A[linhaPivo][colunaPivo]; // Armazena o valor do pivô
 
@@ -128,6 +113,8 @@ class Simplex{
 
             float novaLinha[colunas]; // Linha após processar o valor do pivô
              
+             custoMin = custoMin - (C[colunaPivo]*(B[linhaPivo]/valorPivo));  //Calcula o custo mínimo em reais
+
              // Encontra a linha com o pivô e armazena o valor
              for(int i=0;i<colunas;i++){
                 valLinhaPivo[i] = A[linhaPivo][i];
@@ -184,7 +171,7 @@ class Simplex{
         }
 
         // Encontra os menores coeficientes das restrições na respectiva posição da função objetivo
-        int encontraColunaPivo(){
+        int Simplex::encontraColunaPivo(){
 
             int localizacao = 0;
             float minimo = C[0];
@@ -203,7 +190,7 @@ class Simplex{
         }
 
         // Encontra a linha com o valor do pivô
-        int encontraLinhaPivo(int colunaPivo){
+        int Simplex::encontraLinhaPivo(int colunaPivo){
             float valoresPositivos[linhas];
             std::vector<float> resultado(linhas,0);
             int contValoresNegativos = 0;
@@ -252,7 +239,7 @@ class Simplex{
 
         }
 
-        void calculaSimplex(){
+        void Simplex::calculaSimplex(){
             bool fim = false;
 
             while(!fim){
@@ -278,63 +265,17 @@ class Simplex{
                 }
 
                 if(cont == linhas - 1){
-
-                    std::cout << indice+1 << ": " << B[indice] << std::endl;
-                }
-                else{
-                    std::cout << indice+1 << ": " << 0 << std::endl;
-
+                    std::cout << std::fixed;
+                    std::cout.precision(0);
+                    std::cout << "\n" << indice+1 << ": " << B[indice] << std::endl;
                 }
 
             }
+
+            std::cout << std::fixed;
+            std::cout.precision(2);
+            std::cout<<"\nValor em reais: R$ " << custoMin << std::endl;
 
         }
 
-};
 
-int main()
-{
-
-    int colunasA = 2; // Número de colunas da matriz A
-    int linhasA = 4; // Número de linhas da matriz A
-
-    float C[] = {1,3,4,10};  // Inicializa o vetor C
-    float B[] = {100,300};  // Inicializa o vetor B
-
-
-
-    float a[4][2] = {    // Inicializa o vetor A
-                   {1,1},
-                   {25,75},
-                   {20,70},
-                   {25,75}
-             };
-
-
-        std::vector < std::vector<float> > matriz(linhasA, std::vector<float>(colunasA, 0));
-        std::vector<float> b(linhasA,0);
-        std::vector<float> c(colunasA,0);
-
-
-
-
-       for(int i=0;i<linhasA;i++){ // Transforma o vetor A em matriz
-            for(int j=0; j<colunasA;j++){
-                matriz[i][j] = a[i][j];
-            }
-       }
-
-       for(int i=0;i<linhasA;i++){ // Copia o vetor b para B
-            b[i] = B[i];
-       }
-
-        for(int i=0;i<colunasA;i++){ // Copia o vetor c para C
-            c[i] = C[i];
-       }
-
-      Simplex simplex(matriz,b,c);
-      simplex.calculaSimplex();
-
-
-    return 0;
-}
