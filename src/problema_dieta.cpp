@@ -267,7 +267,7 @@
                 if(cont == linhas - 1){
                     std::cout << std::fixed;
                     std::cout.precision(0);
-                    std::cout << "\n" << indice+1 << ": " << B[indice] << std::endl;
+                    std::cout << "\nAlimento " << indice+8 << ": " << B[indice] << " unidades" << std::endl;
                 }
 
             }
