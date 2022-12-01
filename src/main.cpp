@@ -112,7 +112,7 @@ int main(){
                 std::cout << "Digite seu email: ";
                 std::cin >> email;
                 std::cout << "\n";
-                std::cout << "Gostaria de inserir o limite calórico ideal? S/N" << std::endl;
+                std::cout << "Gostaria que seu limite ideal fosse gerado automaticamente? S/N" << std::endl;
                 std::cin >> escolhaL;
                     if(escolhaL == 'S' || escolhaL == 's'){
                         limite = 0;
@@ -133,7 +133,19 @@ int main(){
                 //fecha o app
                 std::cout << "Gostaria de fechar o app? S/N " << std::endl;
                 std::cin >> escolha;
-                if(escolha == 's' || escolha == 'S')
+                //valida a entrada
+                escolha = std::toupper(escolha);
+                try{
+                    if(escolha != 'S' && escolha != 'N')
+                        throw escolha;
+                }catch(char e5){
+                    do{
+                        std::cout << "Entrada Inválida, digite novamente: ";
+                        std::cin >> escolha;
+                        escolha = std::toupper(escolha);
+                    }while(escolha != 'S' && escolha != 'N');
+                }
+                if(escolha == 'S')
                     painel.setAtivo(false);
                 break;
             default:

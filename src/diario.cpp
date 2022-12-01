@@ -24,10 +24,11 @@ void Diario::inserirEntrada(int codigo, double quantidade){
     double carboidrato;
     double gordura;
     double proteina;
+    double preco;
 
     //extração dos dados para o objeto alimento novo
-    while(dados >> id >> calorias >> carboidrato >> gordura >> proteina){
-        if(codigo == id){
+    while(dados >> id >> calorias >> carboidrato >> gordura >> proteina >> preco){
+        if(id == codigo){
             if(codigo > 8){
                 Alimento* entradaS = new AlimentoSolido(codigo,calorias,carboidrato,gordura,proteina,quantidade);
                 entradas.push_back(entradaS);
