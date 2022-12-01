@@ -86,7 +86,7 @@ void Painel::abrirDiario(std::vector<Usuario*> usuarios){
 
                     float a[5][2] = {{280,35},{358,48},{208,9},  // Inicializa a matriz A
                                     {382,24},{254,37}};  
-                    float B[] = {limite,250};  // Inicializa o vetor B
+                    float B[] = {limite , 250};  // Inicializa o vetor B
 
                     float C[] = {-3,-3,-3,-3,-4}; // Inicializa o vetor C
                                 
